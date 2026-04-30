@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: "Source Sans 3", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --background: 220 14% 6%;
+  --foreground: 210 20% 96%;
+  --card: 220 14% 9%;
+  --card-foreground: 210 20% 96%;
+  --muted: 220 12% 16%;
+  --muted-foreground: 215 14% 62%;
+  --border: 220 10% 22%;
+  --accent: 173 58% 42%;
+  --accent-foreground: 166 100% 6%;
+  --destructive: 0 62% 48%;
+  --ring: 173 58% 42%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply min-h-screen bg-background font-sans text-foreground antialiased;
+    background-image: radial-gradient(
+        ellipse 120% 80% at 20% -10%,
+        hsl(173 40% 12% / 0.25),
+        transparent 55%
+      ),
+      radial-gradient(
+        ellipse 80% 50% at 100% 0%,
+        hsl(220 30% 14% / 0.5),
+        transparent 45%
+      );
+  }
+  :focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+}
+
+@layer components {
+  .markdown-body {
+    @apply max-w-none text-foreground/95;
+  }
+  .markdown-body h1,
+  .markdown-body h2,
+  .markdown-body h3 {
+    @apply font-semibold text-foreground;
+  }
+  .markdown-body h1 {
+    @apply text-xl mt-4 mb-2;
+  }
+  .markdown-body h2 {
+    @apply text-lg mt-4 mb-2;
+  }
+  .markdown-body h3 {
+    @apply text-base mt-3 mb-1;
+  }
+  .markdown-body p {
+    @apply my-2;
+  }
+  .markdown-body ul {
+    @apply my-2 list-disc pl-5;
+  }
+  .markdown-body ol {
+    @apply my-2 list-decimal pl-5;
+  }
+  .markdown-body li {
+    @apply my-1;
+  }
+  .markdown-body a {
+    @apply text-accent underline underline-offset-2;
+  }
+  .markdown-body code {
+    @apply rounded bg-muted px-1 py-0.5 font-mono text-[0.85em] text-accent-foreground;
+  }
+  .markdown-body pre {
+    @apply my-3 overflow-x-auto rounded-md border border-border bg-muted/50 p-3 font-mono text-xs;
+  }
+  .markdown-body pre code {
+    @apply bg-transparent p-0 text-muted-foreground;
+  }
+  .markdown-body table {
+    @apply my-3 w-full border-collapse text-xs;
+  }
+  .markdown-body th,
+  .markdown-body td {
+    @apply border border-border px-2 py-1 text-left;
+  }
+  .markdown-body blockquote {
+    @apply my-3 border-l-2 border-accent/60 pl-3 text-muted-foreground italic;
+  }
+}
