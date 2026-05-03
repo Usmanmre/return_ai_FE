@@ -69,7 +69,7 @@ export function AnalyzePage() {
   const loading = rag.isPending;
 
   return (
-    <div className="grid grid-cols-12 gap-6">
+    <div className="grid w-full grid-cols-12 gap-6">
       <section className="col-span-12 space-y-6 xl:col-span-5">
         <div>
           <h2 className="text-2xl font-bold tracking-tight">RAG workspace</h2>

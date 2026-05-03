@@ -57,7 +57,7 @@ export function IngestPage() {
   const pathIngest = useIngestPath();
 
   const [file, setFile] = useState<File | null>(null);
-  const [uploadFields, setUploadFields] = useState<IngestUploadFields>({});
+  // const [uploadFields, setUploadFields] = useState<IngestUploadFields>({});
   const [pathForm, setPathForm] = useState<IngestPathPayload>({
     csvPath: "",
   });
@@ -87,7 +87,7 @@ export function IngestPage() {
     }
     setLastErrorMessage(null);
     upload.mutate(
-      { file, fields: uploadFields },
+      { file, fields: {} },
       {
         onSuccess: (data) => {
           setSummary(data);

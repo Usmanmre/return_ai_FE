@@ -20,9 +20,9 @@ Open the URL Vite prints (usually `http://localhost:5173`).
 
 ## Environment
 
-| Variable | Description |
-|----------|-------------|
-| `VITE_API_BASE_URL` | Base URL for API calls (no trailing slash). Default: `http://localhost:3000` |
+| Variable                  | Description                                                                                |
+| ------------------------- | ------------------------------------------------------------------------------------------ |
+| `VITE_API_BASE_URL`     | Base URL for API calls (no trailing slash). Default:`http://localhost:3000`              |
 | `VITE_DEV_PROXY_TARGET` | Target for the Vite dev proxy when forwarding `/api` (default `http://localhost:3000`) |
 
 ## CORS troubleshooting
@@ -45,12 +45,12 @@ Prefer fixing CORS on the server for production; the proxy is for **local develo
 
 ## Routes
 
-| Path | Purpose |
-|------|---------|
-| `/` | Dashboard, health, CTAs |
-| `/ingest` | CSV upload (multipart) or server path (JSON) |
-| `/analyze` | RAG workspace |
-| `/docs` | Curl examples and integration notes |
+| Path         | Purpose                                      |
+| ------------ | -------------------------------------------- |
+| `/`        | Dashboard, health, CTAs                      |
+| `/ingest`  | CSV upload (multipart) or server path (JSON) |
+| `/analyze` | RAG workspace                                |
+| `/docs`    | Curl examples and integration notes          |
 
 ## Project layout
 
@@ -63,6 +63,5 @@ Prefer fixing CORS on the server for production; the proxy is for **local develo
 
 - `GET /health`
 - `GET /routes` (optional)
-- `POST /ingest-csv` — JSON: `csvPath`, optional `textColumn`, `summaryColumn`, `ratingColumn`, `maxRows`
 - `POST /ingest-csv/upload` — multipart, field `file`
 - `POST /rag` — **JSON only**, `Content-Type: application/json`, body includes `message` (prefer), optional `k`, `systemPrompt`

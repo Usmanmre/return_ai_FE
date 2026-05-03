@@ -1,6 +1,4 @@
 import { NavLink, Outlet, useLocation } from "react-router-dom";
-import { Badge } from "@/components/ui/Badge";
-import { getBaseUrl } from "@/lib/api";
 
 const nav = [
   { to: "/", label: "Dashboard" },
@@ -12,7 +10,6 @@ const nav = [
 export function AppShell() {
   const location = useLocation();
   const isAnalyze = location.pathname === "/analyze";
-  const base = getBaseUrl();
 
   return (
     <div className="min-h-screen">
@@ -63,13 +60,13 @@ export function AppShell() {
 
       <main
         id="main"
-        className={`mx-auto max-w-7xl px-4 py-8 lg:px-6 ${
-          isAnalyze ? "" : ""
+        className={`px-4 py-8 lg:px-6 ${
+          isAnalyze ? "w-full max-w-none" : "mx-auto max-w-7xl"
         }`}
       >
         {isAnalyze ? (
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-start">
-            <aside className="lg:col-span-3 lg:sticky lg:top-24">
+            {/* <aside className="lg:col-span-3 lg:sticky lg:top-24">
               <div className="rounded-lg border border-border bg-card/60 p-4 text-sm text-muted-foreground">
                 <p className="font-mono text-xs uppercase tracking-wide text-accent">
                   Analyze
@@ -80,8 +77,8 @@ export function AppShell() {
                   vs. noise; optional system prompt for tone and guardrails.
                 </p>
               </div>
-            </aside>
-            <div className="lg:col-span-9">
+            </aside> */}
+            <div className="lg:col-span-12">
               <Outlet />
             </div>
           </div>
