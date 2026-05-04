@@ -12,7 +12,6 @@ import { useToast } from "@/components/ui/Toast";
 import { useIngestPath, type IngestPathPayload } from "@/hooks/useIngestPath";
 import {
   useIngestUpload,
-  type IngestUploadFields,
 } from "@/hooks/useIngestUpload";
 
 function formatSummary(data: IngestCsvResponse) {
